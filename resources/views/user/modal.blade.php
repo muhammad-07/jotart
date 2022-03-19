@@ -38,8 +38,8 @@
 </div>
 @if (Auth::check() != true)
     <!-- Sign Up Modal Start -->
-    <div class="modal fade common-modal " id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel"
-        aria-hidden="true">
+    <div class="modal fade common-modal popup is__dark " id="signUpModal" tabindex="-1"
+        aria-labelledby="signUpModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header p-0">
@@ -52,7 +52,7 @@
                     <p class="already-have-account">{{ __('Already have an account?') }} <a data-toggle="modal"
                             href="#signInModal"
                             class="color-green font-semi-bold">{{ __('Sign
-                                                                                                                                                                                                                                                                                                                                                                        In') }}</a>
+                                                                                                                                                                                                                                                                                                                                                                                                    In') }}</a>
                     </p>
                     {{ Form::open(['route' => 'sign_up_process','files' => true,'data-handler' => 'showMessage','class' => 'ajax']) }}
 
@@ -109,7 +109,7 @@
                         <p class="recaptcha-text">{{ __('Protected by reCAPTCHA and subject to the Google') }} <a
                                 href="#"
                                 class="color-green">{{ __('Privacy
-                                                                                                                                                                                                                                                                                                                                                                                                                            Policy') }}</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            Policy') }}</a>
                             {{ __('and') }} <a href="#" class="color-green">{{ __('Terms of Service.') }}</a>
                         </p>
                     </div>
@@ -121,7 +121,7 @@
     </div>
     <!-- Sign Up Modal End -->
     <!-- Sign In Modal Start -->
-    <div class="modal fade common-modal " id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel"
+    <div class="modal fade common-modal popup is__dark " id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -134,7 +134,7 @@
                 <div class="modal-body p-0 ajax-alert">
                     <p class="already-have-account">New user? <a data-toggle="modal" href="#signUpModal"
                             class="color-green font-semi-bold">{{ __('Create
-                                                                                                                                                                                                                                                                                                                                                                        an account') }}</a>
+                                                                                                                                                                                                                                                                                                                                                                                                    an account') }}</a>
                     </p>
                     {{ Form::open(['route' => 'login_process','files' => true,'data-handler' => 'showMessage','class' => 'ajax']) }}
 
@@ -150,14 +150,14 @@
                     <div class="sign-up-button-part">
                         <a class="forget-pass-btn color-green border-0 font-semi-bold" data-toggle="modal"
                             href="#forgetPasswordModal">{{ __('Forgot
-                                                                                                                                                                                                                                                                                                                                                                            password?') }}</a>
+                                                                                                                                                                                                                                                                                                                                                                                                        password?') }}</a>
                         <button type="submit" class="theme-button1">{{ __('Sign In') }}</button>
                     </div>
                     <div class="sign-up-social-part">
                         <p class="recaptcha-text">{{ __('Protected by reCAPTCHA and subject to the Google') }} <a
                                 href="#"
                                 class="color-green">{{ __('Privacy
-                                                                                                                                                                                                                                                                                                                                                                                                                            Policy') }}</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            Policy') }}</a>
                             and
                             <a href="#" class="color-green">{{ __('Terms of Service.') }}</a>
                         </p>
@@ -469,7 +469,7 @@
                     <div class="purchase-done-box">
                         <h3>{{ __('Yeah!') }}</h3>
                         <p>{{ __('You successfully purchased
-                                                                                                                                                                                                                                                                                                                            C O I N Z from example name') }}
+                                                                                                                                                                                                                                                                                                                                                    C O I N Z from example name') }}
                         </p>
                     </div>
                     <div class="purchase-status-table p-3">
