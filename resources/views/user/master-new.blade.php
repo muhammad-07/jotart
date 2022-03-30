@@ -69,7 +69,7 @@
     @stack('post_styles')
 
     <!-- FAVICONS -->
-    <link rel="icon" href="{{ asset('assets/user/img/favicon-16x16.png') }}" type="image/png" sizes="16x16')}}">
+    {{-- <link rel="icon" href="{{ asset('assets/user/img/favicon-16x16.png') }}" type="image/png" sizes="16x16')}}">
     <link rel="shortcut icon" href="{{ asset('assets/user/img/favicon-16x16.png') }}" type="image/x-icon')}}">
     <link rel="shortcut icon" href="{{ asset('assets/user/img/favicon.png') }}">
 
@@ -80,13 +80,14 @@
     <link rel="apple-touch-icon-precomposed" type="image/x-icon"
         href="{{ asset('assets/user/img/apple-icon-144x144.png') }}" sizes="144x144" />
     <link rel="apple-touch-icon-precomposed" type="image/x-icon"
-        href="{{ asset('assets/user/img/favicon-16x16.png') }}" />
+        href="{{ asset('assets/user/img/favicon-16x16.png') }}" /> --}}
 
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
     <script src="{{ asset('assets/user/js/logic.js') }}"></script>
     <style>
-        .btn-grad {
+        .btn-grad,
+        .theme-button1 {
             color: #ffffff;
             border: none !important;
             -webkit-transition: all 0.4s ease-in-out !important;
@@ -114,9 +115,9 @@
 
         @include('user.message')
         <!-- Pre Loader Area start -->
-        <div id="preloader">
+        {{-- <div id="preloader">
             <div id="status"></div>
-        </div>
+        </div> --}}
         <!-- Pre Loader Area End -->
 
 
@@ -978,7 +979,8 @@
 
                             <div class="container">
                                 <div class="space-y-30">
-                                    <div class="section_head space-y-20">
+                                    <h2 class="section__title">Mintables</h2>
+                                    {{-- <div class="section_head space-y-20">
                                         <div class="d-flex space-x-30">
                                             <h2 class="section__title">Shop</h2>
                                             <div class="dropdown">
@@ -1140,19 +1142,25 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="row mb-30_reset">
+                                        <?php 
+                                        $items = App\Model\Mintable::where('status', '!=', SOLD)->get();
+                                        // print_r($items);
+                                        foreach ($items as $data) {
+                                           
+                                        ?>
                                         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
                                             <div class="card__item eight">
-                                                <span class="txt_xs color_text stars"><i
-                                                        class="ri-star-fill txt_xs"></i>12x</span>
+
                                                 <div class="card_body space-y-10">
                                                     <!-- =============== -->
                                                     <div class="card_head space-y-10">
-                                                        <span class="txt_xs color_text numbering">1/8</span>
+
                                                         <a href="Item-details.html">
                                                             <img class="product__img"
-                                                                src="assets/img/bg/home5/33.png" alt="">
+                                                                src="{{ asset(IMG_MINTABLE_PATH . $data->thumbnail) }}"
+                                                                alt="">
                                                         </a>
                                                     </div>
                                                     <!-- =============== -->
@@ -1160,292 +1168,33 @@
                                                         class="card_footer justify-content-between
                                                             space-x-20">
                                                         <div class="space-y-3">
+                                                            <a href="Profile.html">
+                                                                <p class="product__name txt_sm">{{ $data->title }}
+                                                                </p>
+                                                            </a>
                                                             <div class="space-x-5 d-flex">
                                                                 <i
                                                                     class="ri-star-fill color_brand
                                                                         txt_xs"></i>
-                                                                <span class="color_brand txt_xs">Karambit</span>
+                                                                <span
+                                                                    class="color_brand txt_xs">{{ $data->description }}</span>
                                                             </div>
-                                                            <a href="Profile.html">
-                                                                <p class="product__name txt_sm">Sanctum</p>
-                                                            </a>
+
                                                         </div>
-                                                        <div class="price__content space-x-5">
-                                                            <img class="eth__img" src="assets/img/icons/ETH.svg"
-                                                                alt="eth">
-                                                            <p class="price txt_sm _bold">665
-                                                                ETH</p>
+                                                        <div class="space-x-5">
+                                                            <a class="btn btn-grad" href="javascript:">
+                                                                Mint Now
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-                                            <div class="card__item eight">
-                                                <span class="txt_xs color_text stars"><i
-                                                        class="ri-star-fill txt_xs"></i>10x</span>
-                                                <div class="card_body space-y-10">
-                                                    <!-- =============== -->
-                                                    <div class="card_head space-y-10">
-                                                        <span class="txt_xs color_text numbering">2/8</span>
-                                                        <a href="Item-details.html">
-                                                            <img class="product__img"
-                                                                src="assets/img/bg/home5/34.png" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <!-- =============== -->
-                                                    <div
-                                                        class="card_footer justify-content-between
-                                                            space-x-20">
-                                                        <div class="space-y-3">
-                                                            <div class="space-x-5 d-flex">
-                                                                <i
-                                                                    class="ri-star-fill color_brand
-                                                                        txt_xs"></i>
-                                                                <span class="color_brand txt_xs">Karambit</span>
-                                                            </div>
-                                                            <a href="Profile.html">
-                                                                <p class="product__name txt_sm">Black Violet</p>
-                                                            </a>
-                                                        </div>
-                                                        <div class="price__content space-x-5">
-                                                            <img class="eth__img" src="assets/img/icons/ETH.svg"
-                                                                alt="eth">
-                                                            <p class="price txt_sm _bold">424
-                                                                ETH</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-                                            <div class="card__item eight">
-                                                <span class="txt_xs color_text stars"><i
-                                                        class="ri-star-fill txt_xs"></i>16x</span>
-                                                <div class="card_body space-y-10">
-                                                    <!-- =============== -->
-                                                    <div class="card_head space-y-10">
-                                                        <span class="txt_xs color_text numbering">3/8</span>
-                                                        <a href="Item-details.html">
-                                                            <img class="product__img"
-                                                                src="assets/img/bg/home5/35.png" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <!-- =============== -->
-                                                    <div
-                                                        class="card_footer justify-content-between
-                                                            space-x-20">
-                                                        <div class="space-y-3">
-                                                            <div class="space-x-5 d-flex">
-                                                                <i
-                                                                    class="ri-star-fill color_brand
-                                                                        txt_xs"></i>
-                                                                <span class="color_brand txt_xs">Karambit</span>
-                                                            </div>
-                                                            <a href="Profile.html">
-                                                                <p class="product__name txt_sm">Wings</p>
-                                                            </a>
-                                                        </div>
-                                                        <div class="price__content space-x-5">
-                                                            <img class="eth__img" src="assets/img/icons/ETH.svg"
-                                                                alt="eth">
-                                                            <p class="price txt_sm _bold">935
-                                                                ETH</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-                                            <div class="card__item eight">
-                                                <span class="txt_xs color_text stars"><i
-                                                        class="ri-star-fill txt_xs"></i>15x</span>
-                                                <div class="card_body space-y-10">
-                                                    <!-- =============== -->
-                                                    <div class="card_head space-y-10">
-                                                        <span class="txt_xs color_text numbering">4/8</span>
-                                                        <a href="Item-details.html">
-                                                            <img class="product__img"
-                                                                src="assets/img/bg/home5/36.png" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <!-- =============== -->
-                                                    <div
-                                                        class="card_footer justify-content-between
-                                                            space-x-20">
-                                                        <div class="space-y-3">
-                                                            <div class="space-x-5 d-flex">
-                                                                <i
-                                                                    class="ri-star-fill color_brand
-                                                                        txt_xs"></i>
-                                                                <span class="color_brand txt_xs">Karambit</span>
-                                                            </div>
-                                                            <a href="Profile.html">
-                                                                <p class="product__name txt_sm">Witheout</p>
-                                                            </a>
-                                                        </div>
-                                                        <div class="price__content space-x-5">
-                                                            <img class="eth__img" src="assets/img/icons/ETH.svg"
-                                                                alt="eth">
-                                                            <p class="price txt_sm _bold">235
-                                                                ETH</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-                                            <div class="card__item eight">
-                                                <span class="txt_xs color_text stars"><i
-                                                        class="ri-star-fill txt_xs"></i>10x</span>
-                                                <div class="card_body space-y-10">
-                                                    <!-- =============== -->
-                                                    <div class="card_head space-y-10">
-                                                        <span class="txt_xs color_text numbering">5/8</span>
-                                                        <a href="Item-details.html">
-                                                            <img class="product__img"
-                                                                src="assets/img/bg/home5/37.png" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <!-- =============== -->
-                                                    <div
-                                                        class="card_footer justify-content-between
-                                                            space-x-20">
-                                                        <div class="space-y-3">
-                                                            <div class="space-x-5 d-flex">
-                                                                <i
-                                                                    class="ri-star-fill color_brand
-                                                                        txt_xs"></i>
-                                                                <span class="color_brand txt_xs">Karambit</span>
-                                                            </div>
-                                                            <a href="Profile.html">
-                                                                <p class="product__name txt_sm">Jett</p>
-                                                            </a>
-                                                        </div>
-                                                        <div class="price__content space-x-5">
-                                                            <img class="eth__img" src="assets/img/icons/ETH.svg"
-                                                                alt="eth">
-                                                            <p class="price txt_sm _bold">265
-                                                                ETH</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-                                            <div class="card__item eight">
-                                                <span class="txt_xs color_text stars"><i
-                                                        class="ri-star-fill txt_xs"></i>13x</span>
-                                                <div class="card_body space-y-10">
-                                                    <!-- =============== -->
-                                                    <div class="card_head space-y-10">
-                                                        <span class="txt_xs color_text numbering">6/8</span>
-                                                        <a href="Item-details.html">
-                                                            <img class="product__img"
-                                                                src="assets/img/bg/home5/38.png" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <!-- =============== -->
-                                                    <div
-                                                        class="card_footer justify-content-between
-                                                            space-x-20">
-                                                        <div class="space-y-3">
-                                                            <div class="space-x-5 d-flex">
-                                                                <i
-                                                                    class="ri-star-fill color_brand
-                                                                        txt_xs"></i>
-                                                                <span class="color_brand txt_xs">Karambit</span>
-                                                            </div>
-                                                            <a href="Profile.html">
-                                                                <p class="product__name txt_sm">Spooky</p>
-                                                            </a>
-                                                        </div>
-                                                        <div class="price__content space-x-5">
-                                                            <img class="eth__img" src="assets/img/icons/ETH.svg"
-                                                                alt="eth">
-                                                            <p class="price txt_sm _bold">132
-                                                                ETH</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-                                            <div class="card__item eight">
-                                                <span class="txt_xs color_text stars"><i
-                                                        class="ri-star-fill txt_xs"></i>12x</span>
-                                                <div class="card_body space-y-10">
-                                                    <!-- =============== -->
-                                                    <div class="card_head space-y-10">
-                                                        <span class="txt_xs color_text numbering">7/8</span>
-                                                        <a href="Item-details.html">
-                                                            <img class="product__img"
-                                                                src="assets/img/bg/home5/39.png" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <!-- =============== -->
-                                                    <div
-                                                        class="card_footer justify-content-between
-                                                            space-x-20">
-                                                        <div class="space-y-3">
-                                                            <div class="space-x-5 d-flex">
-                                                                <i
-                                                                    class="ri-star-fill color_brand
-                                                                        txt_xs"></i>
-                                                                <span class="color_brand txt_xs">Karambit</span>
-                                                            </div>
-                                                            <a href="Profile.html">
-                                                                <p class="product__name txt_sm">Raven</p>
-                                                            </a>
-                                                        </div>
-                                                        <div class="price__content space-x-5">
-                                                            <img class="eth__img" src="assets/img/icons/ETH.svg"
-                                                                alt="eth">
-                                                            <p class="price txt_sm _bold">132
-                                                                ETH</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-                                            <div class="card__item eight">
-                                                <span class="txt_xs color_text stars"><i
-                                                        class="ri-star-fill txt_xs"></i>14x</span>
-                                                <div class="card_body space-y-10">
-                                                    <!-- =============== -->
-                                                    <div class="card_head space-y-10">
-                                                        <span class="txt_xs color_text numbering">8/8</span>
-                                                        <a href="Item-details.html">
-                                                            <img class="product__img"
-                                                                src="assets/img/bg/home5/40.png" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <!-- =============== -->
-                                                    <div
-                                                        class="card_footer justify-content-between
-                                                            space-x-20">
-                                                        <div class="space-y-3">
-                                                            <div class="space-x-5 d-flex">
-                                                                <i
-                                                                    class="ri-star-fill color_brand
-                                                                        txt_xs"></i>
-                                                                <span class="color_brand txt_xs">Karambit</span>
-                                                            </div>
-                                                            <a href="Profile.html">
-                                                                <p class="product__name txt_sm">Monks</p>
-                                                            </a>
-                                                        </div>
-                                                        <div class="price__content space-x-5">
-                                                            <img class="eth__img" src="assets/img/icons/ETH.svg"
-                                                                alt="eth">
-                                                            <p class="price txt_sm _bold">132
-                                                                ETH</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <?php
+                                        
+                                        }
+                                        ?>
+
                                     </div>
 
                                 </div>
@@ -1474,19 +1223,7 @@
     <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
     <script src="assets/js/nft.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script>
-        $(document).ready(function() {
 
-            $("#popup_social_media").modal('show');
-        });
-        // var loadFile = function(event) {
-        //     var output = document.getElementById('output');
-        //     output.src = URL.createObjectURL(event.target.files[0]);
-        //     output.onload = function() {
-        //         URL.revokeObjectURL(output.src)
-        //     }
-        // };
-    </script>
 </body>
 
 

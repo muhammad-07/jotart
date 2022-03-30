@@ -25,6 +25,16 @@ Route::group(['prefix'=>'user','namespace'=>'user','middleware'=> ['auth','user'
     Route::get('/product-to-admin/{id}', 'ServiceController@productToAdmin')->name('product_to_admin');
     Route::post('resell-service/{service_id}', 'ServiceController@resellService')->name('resell_service');
 
+    Route::get('mintable/create', 'MintableController@serviceCreate')->name('mintable_create');
+    Route::post('mintable/store', 'MintableController@serviceStore')->name('mintable_store');
+    // Route::get('service/edit/{id}', 'ServiceController@serviceEdit')->name('service_edit');
+    // Route::post('service/update/{id}', 'ServiceController@serviceUpdate')->name('service_update');
+    // Route::get('service/delete/{id}', 'ServiceController@serviceDelete')->name('service_delete');
+    // Route::get('/product-to-admin/{id}', 'ServiceController@productToAdmin')->name('product_to_admin');
+    // Route::post('resell-service/{service_id}', 'ServiceController@resellService')->name('resell_service');
+
+    Route::get('my-mintable-data', 'MintableController@myServiceData')->name('my_mintable_data');
+
     Route::get('my-service-data', 'ServiceController@myServiceData')->name('my_service_data');
     Route::post('user-product-purchase', 'ServiceController@userProductPurchase')->name('user_product_purchase');
     Route::post('user-product-bid', 'ServiceController@userProductBid')->name('user_product_bid');

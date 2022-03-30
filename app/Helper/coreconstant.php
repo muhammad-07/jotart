@@ -61,6 +61,7 @@ const IMG_USER_COVER_PHOTO = 'uploaded_file/users/cover-photo/';
 const IMG_SLEEP_VIEW_PATH = 'uploaded_file/sleep/';
 const IMG_USER_VERIFICATION_PATH = 'users/verifications/';
 const IMG_SERVICE_PATH = 'uploaded_file/services/';
+const IMG_MINTABLE_PATH = 'uploaded_file/mintables/';
 const IMG_NEWS_PATH = 'uploaded_file/news/';
 const FILE_PATH = 'uploaded_file/files/';
 

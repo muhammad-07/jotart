@@ -12071,15 +12071,15 @@ textarea.input_white,
   resize: vertical;
 }
 
-label {
+/* label {
   color: #77748f;
   margin-bottom: 5px;
-}
+} */
 
 /*--------------------------------------------------------------
 ### Radio Checkbox
 --------------------------------------------------------------*/
-.radio {
+/*.radio {
   width: 20px;
   height: 20px;
   display: inline-block;
@@ -12250,7 +12250,7 @@ label {
   margin-left: 0;
   padding-left: 19px;
 }
-
+*/
 .custom-select {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA3klEQVRIS+3VMU9CMRTF8d8zBL+aizoQFhx0kUk33RzdYMNFXUFnYeGrYYyaJiUxJHDLSxodbNKpfeffc9/pbaPyaCrr+3OA++z4rtT5Pg5GuMnCY9yWQEoBE1xhlUUP8YDrCBIB0vojLvGO0yz4hm4JJAKcYYoPHGOZAUdYoIMBXrc5iQAHeMlzviFygj7O8dkWEJU4XI8chALRhn9AVKHf70VRTHu4wFfbmKZLNKt50dLBnna0imcMd/2I0phWa3Y/D1e1Xa9BCZJG0VuQNpaWKMx72xS1Fl5/WN3BN+AgJhnZQlq4AAAAAElFTkSuQmCC");
   background-position: calc(100% - 0.5rem), 100% 0;
@@ -12271,11 +12271,11 @@ label {
   font-size: 0.9375rem;
 }
 
-.custom-control-label::before,
+/* .custom-control-label::before,
 .custom-file-label {
   -webkit-transition: 0.35s ease-in-out;
   transition: 0.35s ease-in-out;
-}
+} */
 
 .form_cc_four {
   background-color: #ffffff;
@@ -12392,7 +12392,7 @@ label {
 .form_cc_four .upload__file:hover i {
   color: white;
 }
-
+/* 
 input[type="checkbox"] {
   height: 0;
   width: 0;
@@ -12436,7 +12436,7 @@ input:checked + label:after {
 label:active:after {
   width: 44px;
 }
-
+ */
 .choose_collection {
   border-radius: 12px;
   background-color: #f2f7fa;
@@ -33777,15 +33777,15 @@ textarea.input_white,
   resize: vertical;
 }
 
-label {
+/* label {
   color: #77748f;
   margin-bottom: 5px;
-}
+} */
 
 /*--------------------------------------------------------------
 ### Radio Checkbox
 --------------------------------------------------------------*/
-.radio {
+/* .radio {
   width: 20px;
   height: 20px;
   display: inline-block;
@@ -33851,7 +33851,7 @@ label {
 
 .radio:hover input:checked + .input:after {
   background: #183b56;
-}
+} */
 
 @keyframes rotate {
   0% {
@@ -33864,7 +33864,7 @@ label {
   }
 }
 
-.custom-control-input:checked ~ .custom-control-label::before {
+/* .custom-control-input:checked ~ .custom-control-label::before {
   color: #fff;
   border-color: white;
   background-color: #566ffe;
@@ -33955,7 +33955,7 @@ label {
 .custom-switch .custom-control-label {
   margin-left: 0;
   padding-left: 19px;
-}
+} */
 
 .custom-select {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA3klEQVRIS+3VMU9CMRTF8d8zBL+aizoQFhx0kUk33RzdYMNFXUFnYeGrYYyaJiUxJHDLSxodbNKpfeffc9/pbaPyaCrr+3OA++z4rtT5Pg5GuMnCY9yWQEoBE1xhlUUP8YDrCBIB0vojLvGO0yz4hm4JJAKcYYoPHGOZAUdYoIMBXrc5iQAHeMlzviFygj7O8dkWEJU4XI8chALRhn9AVKHf70VRTHu4wFfbmKZLNKt50dLBnna0imcMd/2I0phWa3Y/D1e1Xa9BCZJG0VuQNpaWKMx72xS1Fl5/WN3BN+AgJhnZQlq4AAAAAElFTkSuQmCC");
@@ -34098,7 +34098,7 @@ label {
 .form_cc_four .upload__file:hover i {
   color: white;
 }
-
+/* 
 input[type="checkbox"] {
   height: 0;
   width: 0;
@@ -34141,7 +34141,7 @@ input:checked + label:after {
 
 label:active:after {
   width: 44px;
-}
+} */
 
 .choose_collection {
   border-radius: 12px;
@@ -43587,4 +43587,72 @@ body, input, .ant-layout-header, .page_name, .product__name, h1, h2, h3, h4, h5,
 }
 .header__1 .header__btns {
   display: flex;
+}
+
+
+/* MIX TEMPLATE muhammad */
+.navbar-user-name {
+  color: #fff
+}
+ul.header__btns > li {
+  margin-left: 7px;
+}
+.search-sidebar-wrap,
+.tab-nav-list.nav-tabs.faq-tab-nav-list
+{
+  filter: drop-shadow(0 4px 10px #3c3c3c);
+}
+.footer-area,
+.search-sidebar-wrap,
+.card,
+.dropdown-menu,
+.tab-nav-list.nav-tabs.faq-tab-nav-list
+{
+  background: #111 !important;
+  background-image: none;
+}
+.user-dashboard-sidebar-menu ul li a.active {
+  color: var(--theme-color) !important;
+  background-color: #4B5249;
+}
+.page-banner-top-space,
+.breadcrumb-section {
+  display: none;
+}
+
+.form-control,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"], input[type="number"], select, textarea, .custom-select {
+  
+  background-color: #27292b !important;
+  
+}
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="number"]:focus, select:focus, textarea:focus, .custom-select:focus {
+  background-color: #757070 !important;
+}
+
+.create-new-page-box label.custom-radio img {
+  height: 15px;
+  margin-right: 6px;
+  display: inline-block;
+}
+.label-text {
+color: #0c3043;
+}
+.nice-select.form-control,
+.faq-list .card .card-header button {
+
+  color: #fff;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #5eb9ff;
+}
+.faq-list .card .card-header button::before {
+  top: 4px;
+}
+
+.faq-list .card {
+  padding: 20px
 }

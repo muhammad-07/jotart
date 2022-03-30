@@ -1,14 +1,14 @@
 <!-- Footer Start -->
 <footer class="footer-area position-relative">
     <!-- footer elements start -->
-    <img src="{{asset('assets/user/img/footer-img/footer-rect-shape.png')}}" alt="{{__('shape')}}" class="footer-rect-shape position-absolute">
+    {{-- <img src="{{asset('assets/user/img/footer-img/footer-rect-shape.png')}}" alt="{{__('shape')}}" class="footer-rect-shape position-absolute">
     <img src="{{asset('assets/user/img/footer-img/footer-dot1.png')}}" alt="{{__('dot')}}" class="footer-dot1 position-absolute">
     <img src="{{asset('assets/user/img/footer-img/footer-dot2.png')}}" alt="{{__('dot')}}" class="footer-dot2 position-absolute">
-    <img src="{{asset('assets/user/img/footer-img/footer-dot3.png')}}" alt="{{__('dot')}}" class="footer-dot3 position-absolute">
+    <img src="{{asset('assets/user/img/footer-img/footer-dot3.png')}}" alt="{{__('dot')}}" class="footer-dot3 position-absolute"> --}}
     <!-- footer elements end -->
     <div class="container">
         <!-- .footer-widget-area -->
-        <div class="row footer-top-part section-p-t-b-100">
+        {{-- <div class="row footer-top-part section-p-t-b-100">
             <div class="col-12 col-sm-3 col-md-3 col-lg-4">
                 <div class="footer-widget footer-about">
                     <img src="{{asset('assets/user/img/logo.png')}}" alt="{{__('ntfzai')}}">
@@ -50,13 +50,13 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!--copyright-text-->
         <div class="row">
             <div class="col-md-12">
                 <div class="copyright-wrapper d-flex justify-content-center align-items-center">
                     <div class="copyright-text">
-                        <p>{{__('Copyright © 2021 ntfzai. All rights reserved')}}</p>
+                        <p>{{__('Copyright © 2022 JotArt. All rights reserved')}}</p>
                     </div>
                 </div>
             </div>

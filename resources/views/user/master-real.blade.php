@@ -4,24 +4,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="{{ __('JotArt - NFT Marketplace HTML5 Responsive Template') }}">
+    <meta name="description" content="{{ __('Nftzai - NFT Marketplace HTML5 Responsive Template') }}">
     <meta name="keywords"
         content="{{ __('crypto currency, currency, crypto, nft marketplace, NFT, nft, NFT marketplace') }}">
-    <meta name="author" content="{{ __('Muhammad') }}">
+    <meta name="author" content="{{ __('zainiktheme') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta property="og:type" content="{{ __('Web Template') }}">
-    <meta property="og:title" content="{{ __('JotArt - NFT Marketplace HTML5 Responsive Template') }}">
-    <meta property="og:description" content="{{ __('JotArt - NFT Marketplace HTML5 Responsive Template') }}">
+    <meta property="og:title" content="{{ __('Nftzai - NFT Marketplace HTML5 Responsive Template') }}">
+    <meta property="og:description" content="{{ __('Nftzai - NFT Marketplace HTML5 Responsive Template') }}">
     <meta property="og:image" content="{{ asset('assets/user/img/01_preview.png') }}">
-    <meta name="twitter:card" content="{{ __('Muhammad') }}">
-    <meta name="twitter:title" content="{{ __('JotArt - NFT Marketplace HTML5 Responsive Template') }}">
-    <meta name="twitter:description" content="{{ __('JotArt - NFT Marketplace HTML5 Responsive Template') }}">
+    <meta name="twitter:card" content="{{ __('zainiktheme') }}">
+    <meta name="twitter:title" content="{{ __('Nftzai - NFT Marketplace HTML5 Responsive Template') }}">
+    <meta name="twitter:description" content="{{ __('Nftzai - NFT Marketplace HTML5 Responsive Template') }}">
     <meta name="twitter:image" content="{{ asset('assets/user/img/01_preview.png') }}">
     <meta name="msapplication-TileImage" content="{{ asset('assets/user/img/01_preview.png') }}">
     <meta name="msapplication-TileColor" content="rgba(103, 20, 222,.55)">
     <meta name="theme-color" content="#69B756">
     @yield('style')
-    <title>@yield('title') {{ __('| JotArt') }}</title>
+    <title>@yield('title') {{ __('| Nftzai') }}</title>
     <!--=======================================
       All Css Style link
     ===========================================-->
@@ -69,7 +69,7 @@
     @stack('post_styles')
 
     <!-- FAVICONS -->
-    {{-- <link rel="icon" href="{{ asset('assets/user/img/favicon-16x16.png') }}" type="image/png" sizes="16x16')}}">
+    <link rel="icon" href="{{ asset('assets/user/img/favicon-16x16.png') }}" type="image/png" sizes="16x16')}}">
     <link rel="shortcut icon" href="{{ asset('assets/user/img/favicon-16x16.png') }}" type="image/x-icon')}}">
     <link rel="shortcut icon" href="{{ asset('assets/user/img/favicon.png') }}">
 
@@ -80,28 +80,18 @@
     <link rel="apple-touch-icon-precomposed" type="image/x-icon"
         href="{{ asset('assets/user/img/apple-icon-144x144.png') }}" sizes="144x144" />
     <link rel="apple-touch-icon-precomposed" type="image/x-icon"
-        href="{{ asset('assets/user/img/favicon-16x16.png') }}" /> --}}
+        href="{{ asset('assets/user/img/favicon-16x16.png') }}" />
 
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
     <script src="{{ asset('assets/user/js/logic.js') }}"></script>
     <style>
-        .btn-grad, .theme-button1 {
+        .btn-grad {
             color: #ffffff;
             border: none !important;
             -webkit-transition: all 0.4s ease-in-out !important;
             transition: all 0.4s ease-in-out !important;
             background: radial-gradient(100% 100% at 53.13% 0%, #31e7fa 0%, #4477ff 52.6%, #db74ff 100%);
-        }
-    </style>
-
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/remixicon.css') }}" />
-
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/swiper-bundle.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
-    <style>
-        .gaming__sidebar {
-            position: fixed;
         }
 
     </style>
@@ -110,14 +100,14 @@
 <body>
     @include('user.message')
     <!-- Pre Loader Area start -->
-    {{-- <div id="preloader">
+    <div id="preloader">
         <div id="status"></div>
-    </div> --}}
+    </div>
     <!-- Pre Loader Area End -->
 
     <!--Main Menu/Navbar Area Start -->
 
-    @include('user.menu-new')
+    @include('user.menu')
 
     <!-- Offcanvas Overlay -->
     <div class="offcanvas-overlay"></div>

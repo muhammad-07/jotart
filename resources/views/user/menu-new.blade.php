@@ -38,16 +38,11 @@
             <div class="wrapper js-header-wrapper">
                 <div class="header__logo ml-30">
                     <a href="/">
-                        <img
-                            class="header__logo"
-                            id="logo_js"
-                            src="assets/img/logos/Jot-Art-Icon.png"
-                            alt="logo"
-                            style="height: 70px"
-                            />
+                        <img class="header__logo" id="logo_js" src="{{ asset('assets/img/logos/Jot-Art-Icon.png') }}" alt="logo"
+                            style="height: 70px" />
                     </a>
                 </div>
-    
+
                 <!-- ==================  -->
                 <div class="header__menu">
                     <ul class="d-flex space-x-20">
@@ -85,11 +80,11 @@
                         <li>
                             <a class="color_black" href="#"> Services </a>
                         </li> --}}
-                        
+
                         {{-- <li>
                             <a class="color_black" href="javascript:void" data-toggle="modal" data-target="#popup_social_media"> Mint </a>
                         </li> --}}
-                        
+
                     </ul>
                 </div>
                 <!-- ================= -->
@@ -99,7 +94,7 @@
                         <i class="ri-search-line"></i>
                     </button>
                 </div>
-                <div class="header__btns">
+                <ul class="header__btns">
                     {{-- <a class="btn btn-grad btn-sm" style="padding-top: 10px;" href="Connect-wallet.html">
                         <i class="ri-wallet-3-line"></i>
                         Connect wallet</a>
@@ -107,65 +102,63 @@
                         <img width="45" src="assets/img/icons/metamask.svg" alt="">
                     </a> --}}
                     @if (Auth::check())
-                            
-                            <li id="bdiv"><button class="theme-button1 btn btn-grad btn-sm" id="cbutton" onclick="login();">
-                                    <i class="ri-wallet-3-line"></i>
-                                    Connect wallet</button></li>
-                            <li><a href="{{ route('service_create') }}"
-                                    class="theme-button1 nav-upload">{{ __('upload') }}</a></li>
-                            <li class="nav-item dropdown">
-                                <button class="dropdown-toggle d-flex align-items-center" id="userNavbarDropdown"
-                                    type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="navbar-user-img-wrap position-relative">
+                        <li id="bdiv"><button class="btn btn-grad" id="cbutton" onclick="login();">
+                                <i class="ri-wallet-3-line"></i>
+                                Connect wallet</button></li>
+                        <li><a href="{{ route('service_create') }}"
+                                class="theme-button1 nav-upload">{{ __('upload') }}</a></li>
+                        <li class="nav-item dropdown">
+                            <button class="dropdown-toggle d-flex align-items-center" id="userNavbarDropdown"
+                                type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="navbar-user-img-wrap position-relative">
+                                    <img src="{{ isset(Auth::user()->photo)? asset(IMG_USER_VIEW_PATH . Auth::user()->photo): Avatar::create(Auth::user()->first_name . ' ' . Auth::user()->last_name)->toBase64() }}"
+                                        alt="{{ __('user') }}">
+                                    <span class="user-verified-badge position-absolute"><i
+                                            class="fas fa-check"></i></span>
+                                </span>
+                                <span class="navbar-user-name font-semi-bold font-18">{{ Auth::user()->first_name }}
+                                    {{ Auth::user()->last_name }}</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userNavbarDropdown">
+                                <div class="navbarUserDropdownInner d-flex align-items-center">
+                                    <div class="navbar-user-img-wrap position-relative">
                                         <img src="{{ isset(Auth::user()->photo)? asset(IMG_USER_VIEW_PATH . Auth::user()->photo): Avatar::create(Auth::user()->first_name . ' ' . Auth::user()->last_name)->toBase64() }}"
                                             alt="{{ __('user') }}">
                                         <span class="user-verified-badge position-absolute"><i
                                                 class="fas fa-check"></i></span>
-                                    </span>
-                                    <span
-                                        class="navbar-user-name font-semi-bold font-18">{{ Auth::user()->first_name }}
-                                        {{ Auth::user()->last_name }}</span>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userNavbarDropdown">
-                                    <div class="navbarUserDropdownInner d-flex align-items-center">
-                                        <div class="navbar-user-img-wrap position-relative">
-                                            <img src="{{ isset(Auth::user()->photo)? asset(IMG_USER_VIEW_PATH . Auth::user()->photo): Avatar::create(Auth::user()->first_name . ' ' . Auth::user()->last_name)->toBase64() }}"
-                                                alt="{{ __('user') }}">
-                                            <span class="user-verified-badge position-absolute"><i
-                                                    class="fas fa-check"></i></span>
-                                        </div>
-                                        <h6 class="navbar-user-name font-semi-bold font-18">
-                                            {{ Auth::user()->first_name }} {{ Auth::user()->last_name }} </h6>
                                     </div>
-                                    <!-- Show If Wallet not connected after login -->
-                                    <a href="{{ route('my_wallets') }}"
-                                        class="dropdown-item theme-button1 user-dropdown-nav-wallet">{{ __('My
-                                                                                                                                                                                                    Wallet') }}</a>
-                                    <!-- Show If Wallet not connected after login -->
-                                    <a class="dropdown-item" href="{{ route('login') }}"><i
-                                            class="fas fa-tachometer-alt"></i>{{ __('Dashboard') }}</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ route('user_profile') }}"><i
-                                            class="far fa-user"></i>{{ __('My
-                                                                                                                                                                                                                    profile') }}</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ route('my_collections') }}"><i
-                                            class="far fa-image"></i>{{ __('My
-                                                                                                                                                                                                                            Artworks') }}</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ route('logOut') }}"><i
-                                            class="fas fa-sign-in-alt"></i>{{ __('Logout') }}</a>
+                                    <h6 class="navbar-user-name font-semi-bold font-18">
+                                        {{ Auth::user()->first_name }} {{ Auth::user()->last_name }} </h6>
                                 </div>
-                            </li>
-                        @else
-                            <li><a data-toggle="modal" href="#signInModal"
-                                    class="btn btn-grad nav-upload">{{ __('Upload') }}</a></li>
-                            <li class="nav-wallet"><a data-toggle="modal" href="#signInModal"
-                                    class="btn btn-grad" style="margin-left: 7px">{{ __('Join With Us') }}</a></li>
-                        @endif
-                </div>
+                                <!-- Show If Wallet not connected after login -->
+                                <a href="{{ route('my_wallets') }}"
+                                    class="dropdown-item theme-button1 user-dropdown-nav-wallet">{{ __('My
+                                                                                                                                                                                                                                        Wallet') }}</a>
+                                <!-- Show If Wallet not connected after login -->
+                                <a class="dropdown-item" href="{{ route('login') }}"><i
+                                        class="fas fa-tachometer-alt"></i>{{ __('Dashboard') }}</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ route('user_profile') }}"><i
+                                        class="far fa-user"></i>{{ __('My
+                                                                                                                                                                                                                                                            profile') }}</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ route('my_collections') }}"><i
+                                        class="far fa-image"></i>{{ __('My
+                                                                                                                                                                                                                                                                    Artworks') }}</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ route('logOut') }}"><i
+                                        class="fas fa-sign-in-alt"></i>{{ __('Logout') }}</a>
+                            </div>
+                        </li>
+                    @else
+                        <li><a data-toggle="modal" href="#signInModal"
+                                class="btn btn-grad nav-upload">{{ __('Upload') }}</a></li>
+                        <li class="nav-wallet"><a data-toggle="modal" href="#signInModal" class="btn btn-grad"
+                                style="margin-left: 7px">{{ __('Sign In') }}</a></li>
+                    @endif
+                </ul>
                 <div class="header__burger js-header-burger"></div>
-    
+
                 <div class="header__mobile js-header-mobile">
                     <div class="header__mobile__menu space-y-40">
                         <ul class="d-flex space-y-20">
@@ -173,7 +166,7 @@
                             <li> <a class="color_black" href="Collections.html"> Collections</a> </li>
                             <li> <a class="color_black" href="Profile.html"> Profile</a> </li>
                             <li> <a class="color_black" href="Creators.html"> Creators</a> </li>
-                
+
                         </ul>
                         <div class="space-y-20">
                             <div class="header__search in_mobile w-full">
@@ -190,19 +183,14 @@
             </div>
         </div>
     </header>
-    
+
     <!-- ====== headers -->
     <header class="header__1 js-header header_wallet" id="header_admin">
         <div class="container">
             <div class="wrapper js-header-wrapper space-x-10">
                 <div class="header__logo">
                     <a href="/">
-                        <img
-                            class="header__logo"
-                            id="logo_js"
-                            src="assets/img/logos/Logo.svg"
-                            alt="logo"
-                            />
+                        <img class="header__logo" id="logo_js" src="assets/img/logos/Logo.svg" alt="logo" />
                     </a>
                 </div>
                 <!-- ==================  -->
@@ -236,7 +224,7 @@
                             <a class="color_black is_new" href="#">Pages <i class="ri-more-2-fill"></i></a>
                             <ul class="menu__popup2 space-y-20">
                                 <div class="row sub_menu_row">
-                                
+
                                     <div class="col-lg-6 space-y-10">
                                         <!-- =============== -->
                                         <li>
@@ -252,7 +240,7 @@
                                                 Edit Profile
                                             </a>
                                         </li>
-                                
+
                                         <!-- =============== -->
                                         <li>
                                             <a href="Item-details.html">
@@ -281,7 +269,7 @@
                                                 Ranking
                                             </a>
                                         </li>
-                                
+
                                         <!-- =============== -->
                                         <li>
                                             <a class="is_new" href="newsletter.html">
@@ -303,7 +291,7 @@
                                                 Forum details
                                             </a>
                                         </li>
-                                
+
                                         <!-- =============== -->
                                         <li>
                                             <a href="no_results.html">
@@ -311,7 +299,7 @@
                                                 No Result
                                             </a>
                                         </li>
-                                
+
                                         <!-- =============== -->
                                         <li>
                                             <a class="is_new" href="Contact.html">
@@ -319,17 +307,17 @@
                                                 Contact
                                             </a>
                                         </li>
-                                
+
                                     </div>
-                                
-                                
-                                
-                                
-                                
-                                
-                                
+
+
+
+
+
+
+
                                     <div class="col-lg-6 space-y-10">
-                                
+
                                         <!-- =============== -->
                                         <li>
                                             <a href="Upload-type.html">
@@ -344,7 +332,7 @@
                                                 Connect wallet
                                             </a>
                                         </li>
-                                
+
                                         <!-- =============== -->
                                         <li>
                                             <a href="questions.html">
@@ -409,7 +397,8 @@
                                             </a>
                                         </li>
                                     </div>
-                                </div>						</ul>
+                                </div>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -436,13 +425,11 @@
                                 d-flex
                                 justify-content-between
                                 align-items-center">
-                                <img
-                                    class="thumb"
-                                    src="assets/img/notifications/1.png"
-                                    alt="..."
-                                    />
+                                <img class="thumb" src="assets/img/notifications/1.png" alt="..." />
                                 <div class="details">
-                                    <a href="activity.html"> <h6>Money revieved</h6> </a>
+                                    <a href="activity.html">
+                                        <h6>Money revieved</h6>
+                                    </a>
                                     <p>0.6 ETH</p>
                                 </div>
                                 <span class="circle"></span>
@@ -453,11 +440,7 @@
                         <div class="price">
                             <span>2.45 <strong>ETH</strong> </span>
                         </div>
-                        <img
-                            class="avatar"
-                            src="assets/img/avatars/avatar_2.png"
-                            alt="avatar"
-                            />
+                        <img class="avatar" src="assets/img/avatars/avatar_2.png" alt="avatar" />
                         <div class="avatar_popup space-y-20">
                             <div class="d-flex align-items-center justify-content-between">
                                 <span> 13b9ebda035r178... </span>
@@ -466,11 +449,7 @@
                                 </a>
                             </div>
                             <div class="d-flex align-items-center space-x-10">
-                                <img
-                                    class="coin"
-                                    src="assets/img/logos/coin.svg"
-                                    alt="/"
-                                    />
+                                <img class="coin" src="assets/img/logos/coin.svg" alt="/" />
                                 <div class="info">
                                     <p class="text-sm font-book text-gray-400">Balance</p>
                                     <p class="w-full text-sm font-bold text-green-500">16.58 ETH</p>
@@ -502,7 +481,7 @@
                             <li> <a class="color_black" href="Collections.html"> Collections</a> </li>
                             <li> <a class="color_black" href="Profile.html"> Profile</a> </li>
                             <li> <a class="color_black" href="Creators.html"> Creators</a> </li>
-                
+
                         </ul>
                         <div class="space-y-20">
                             <div class="header__search in_mobile w-full">

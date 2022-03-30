@@ -170,7 +170,7 @@
     <!-- Sign In Modal End -->
 
     <!-- Forget Password Modal Start -->
-    <div class="modal fade common-modal" id="forgetPasswordModal" tabindex="-1"
+    <div class="modal fade common-modal is__dark" id="forgetPasswordModal" tabindex="-1"
         aria-labelledby="forgetPasswordModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -211,7 +211,7 @@
 
     <!-- MINT Modal End -->
     <!-- Main Item Preview Pop Up Modal Start -->
-    <div class="modal fade common-modal" id="mainItemPreviewModal" tabindex="-1"
+    <div class="modal fade common-modal is__dark" id="mainItemPreviewModal" tabindex="-1"
         aria-labelledby="mainItemPreviewModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -326,7 +326,7 @@
 @endif
 <!-- Purchase1 modal start -->
 @if (isset($service))
-    <div class="modal fade common-modal purchase-inner-modal" id="purchase1Modal" tabindex="-1"
+    <div class="modal fade common-modal purchase-inner-modal is__dark" id="purchase1Modal" tabindex="-1"
         aria-labelledby="purchase1ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -425,7 +425,7 @@
             </div>
         </div>
     </div>
-    <div class="modal fade common-modal purchase-inner-modal" id="purchaseNotModal" tabindex="-1"
+    <div class="modal fade common-modal purchase-inner-modal is__dark" id="purchaseNotModal" tabindex="-1"
         aria-labelledby="purchaseNotModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -455,7 +455,7 @@
 @endif
 <!-- Purchase1 modal end -->
 <!-- Purchase3 modal start -->
-<div class="modal fade common-modal purchase-inner-modal" id="purchase3Modal" tabindex="-1" aria-hidden="true">
+<div class="modal fade common-modal purchase-inner-modal is__dark" id="purchase3Modal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header p-0">
@@ -493,7 +493,7 @@
     </div>
 </div>
 <!-- Purchase3 modal end -->
-<div class="modal fade common-modal purchase-inner-modal" id="notAuthModal" tabindex="-1"
+<div class="modal fade common-modal purchase-inner-modal is__dark" id="notAuthModal" tabindex="-1"
     aria-labelledby="notAuthModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
