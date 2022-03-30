@@ -219,6 +219,18 @@
                                 </p>
                             </a>
                         </li>
+<<<<<<< HEAD
+=======
+                        <li class="nav-item @if (isset($menu) && $menu == 'mintable_list') menu-open @endif">
+                            <a href="{{ route('admin_mintable_list') }}"
+                                class="nav-link @if (isset($menu) && $menu == 'mintable_list') active @endif">
+                                <i class="nav-icon fas fa-star"></i>
+                                <p>
+                                    {{ __('Mintable Artworks') }}
+                                </p>
+                            </a>
+                        </li>
+>>>>>>> 65aab0d482f61ce62a8b90062356f83a8f7c83d3
                         <li class="nav-item @if (isset($menu) && $menu == 'contacts') menu-open @endif">
                             <a href="{{ route('admin_contact_list') }}"
                                 class="nav-link @if (isset($menu) && $menu == 'contacts') active @endif">

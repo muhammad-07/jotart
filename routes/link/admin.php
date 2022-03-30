@@ -83,6 +83,19 @@ Route::group(['prefix'=>'admin','namespace'=>'admin','middleware'=> ['auth','adm
     Route::get('cancel-service/{id}', 'ServiceController@cancelService')->name('admin_cancel_service');
     Route::get('update-service-slider/{id}', 'ServiceController@updateServiceSlider')->name('admin_update_service_slider');
 
+<<<<<<< HEAD
+=======
+    // Mintable
+    Route::get('mintable-list', 'MintableController@mintList')->name('admin_mintable_list');
+    Route::get('add-mintable', 'MintableController@addMint')->name('admin_add_mintable');
+    Route::get('edit-mintable/{id}', 'MintableController@editMint')->name('admin_edit_mintable');
+    Route::post('update-mintable/{id}', 'MintableController@updateMint')->name('admin_update_mintable');
+    Route::get('approve-mintable/{id}', 'MintableController@approveMint')->name('admin_approve_mintable');
+    Route::get('cancel-mintable/{id}', 'MintableController@cancelMint')->name('admin_cancel_mintable');
+    Route::get('update-mintable-slider/{id}', 'MintableController@updateMintSlider')->name('admin_update_mintable_slider');
+   
+    Route::get('mintable/delete/{id}', 'MintableController@mintableDelete')->name('mintable_delete');
+>>>>>>> 65aab0d482f61ce62a8b90062356f83a8f7c83d3
     // Bid
     Route::get('show-bid/{id}', 'ServiceController@showBid')->name('admin_show_bid');
     Route::get('bid-success/{service_id}/{id}', 'ServiceController@bidSuccess')->name('admin_bid_success');

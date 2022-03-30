@@ -3,6 +3,10 @@
         <li><a href="{{route('login')}}" class="@if(isset($menu) && $menu == 'dashboard') active @endif"><span><i class="fas fa-grip-horizontal"></i></span>{{__('Dashboard')}}</a></li>
         <li><a href="{{route('my_wallets')}}" class="@if(isset($menu) && $menu == 'my-wallet') active @endif"><span><i class="fas fa-wallet"></i></span>{{__('My wallet')}}</a></li>
         <li><a href="{{route('my_service_data')}}" class="@if(isset($menu) && $menu == 'my-service-data') active @endif"><span><i class="fas fa-project-diagram"></i></span>{{__('My Artworks')}}</a></li>
+<<<<<<< HEAD
+=======
+        <li><a href="{{route('my_mintable_data')}}" class="@if(isset($menu) && $menu == 'my-mintable-data') active @endif"><span><i class="fas fa-star"></i></span>{{__('My Mintables')}}</a></li>
+>>>>>>> 65aab0d482f61ce62a8b90062356f83a8f7c83d3
         <li><a href="{{route('my_earnings')}}" class="@if(isset($menu) && $menu == 'my-earnings') active @endif"><span><i class="fas fa-coins"></i></span>{{__('My Earnings')}}</a></li>
         <li><a href="{{route('deposit_data')}}" class="@if(isset($menu) && $menu == 'deposit-data') active @endif"><span><i class="fas fa-hand-holding-usd"></i></span>{{__('Deposit History')}}</a></li>
         <li><a href="{{route('withdraw_data')}}" class="@if(isset($menu) && $menu == 'withdraw-data') active @endif"><span><i class="far fa-money-bill-alt"></i></span>{{__('Withdraw History')}}</a></li>

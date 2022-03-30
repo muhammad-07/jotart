@@ -86,7 +86,12 @@
     <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
     <script src="{{ asset('assets/user/js/logic.js') }}"></script>
     <style>
+<<<<<<< HEAD
         .btn-grad, .theme-button1 {
+=======
+        .btn-grad,
+        .theme-button1 {
+>>>>>>> 65aab0d482f61ce62a8b90062356f83a8f7c83d3
             color: #ffffff;
             border: none !important;
             -webkit-transition: all 0.4s ease-in-out !important;
@@ -978,7 +983,12 @@
 
                             <div class="container">
                                 <div class="space-y-30">
+<<<<<<< HEAD
                                     <div class="section_head space-y-20">
+=======
+                                    <h2 class="section__title">Mintables</h2>
+                                    {{-- <div class="section_head space-y-20">
+>>>>>>> 65aab0d482f61ce62a8b90062356f83a8f7c83d3
                                         <div class="d-flex space-x-30">
                                             <h2 class="section__title">Shop</h2>
                                             <div class="dropdown">
@@ -1140,6 +1150,7 @@
                                                 </div>
                                             </div>
                                         </div>
+<<<<<<< HEAD
                                     </div>
                                     <div class="row mb-30_reset">
                                         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
@@ -1305,6 +1316,27 @@
                                                         <a href="Item-details.html">
                                                             <img class="product__img"
                                                                 src="assets/img/bg/home5/37.png" alt="">
+=======
+                                    </div> --}}
+                                    <div class="row mb-30_reset">
+                                        <?php 
+                                        $items = App\Model\Mintable::where('status', '!=', SOLD)->get();
+                                        // print_r($items);
+                                        foreach ($items as $data) {
+                                           
+                                        ?>
+                                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                            <div class="card__item eight">
+
+                                                <div class="card_body space-y-10">
+                                                    <!-- =============== -->
+                                                    <div class="card_head space-y-10">
+
+                                                        <a href="Item-details.html">
+                                                            <img class="product__img"
+                                                                src="{{ asset(IMG_MINTABLE_PATH . $data->thumbnail) }}"
+                                                                alt="">
+>>>>>>> 65aab0d482f61ce62a8b90062356f83a8f7c83d3
                                                         </a>
                                                     </div>
                                                     <!-- =============== -->
@@ -1312,6 +1344,7 @@
                                                         class="card_footer justify-content-between
                                                             space-x-20">
                                                         <div class="space-y-3">
+<<<<<<< HEAD
                                                             <div class="space-x-5 d-flex">
                                                                 <i
                                                                     class="ri-star-fill color_brand
@@ -1350,10 +1383,17 @@
                                                         class="card_footer justify-content-between
                                                             space-x-20">
                                                         <div class="space-y-3">
+=======
+                                                            <a href="Profile.html">
+                                                                <p class="product__name txt_sm">{{ $data->title }}
+                                                                </p>
+                                                            </a>
+>>>>>>> 65aab0d482f61ce62a8b90062356f83a8f7c83d3
                                                             <div class="space-x-5 d-flex">
                                                                 <i
                                                                     class="ri-star-fill color_brand
                                                                         txt_xs"></i>
+<<<<<<< HEAD
                                                                 <span class="color_brand txt_xs">Karambit</span>
                                                             </div>
                                                             <a href="Profile.html">
@@ -1442,10 +1482,30 @@
                                                             <p class="price txt_sm _bold">132
                                                                 ETH</p>
                                                         </div>
+=======
+                                                                <span
+                                                                    class="color_brand txt_xs">{{ $data->description }}</span>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="space-x-5">
+                                                            <a class="btn btn-grad" href="javascript:">
+                                                                Mint Now
+                                                            </a>
+                                                        </div>
+>>>>>>> 65aab0d482f61ce62a8b90062356f83a8f7c83d3
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+<<<<<<< HEAD
+=======
+                                        <?php
+                                        
+                                        }
+                                        ?>
+
+>>>>>>> 65aab0d482f61ce62a8b90062356f83a8f7c83d3
                                     </div>
 
                                 </div>
@@ -1474,7 +1534,11 @@
     <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
     <script src="assets/js/nft.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 65aab0d482f61ce62a8b90062356f83a8f7c83d3
 </body>
 
 

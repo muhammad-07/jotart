@@ -10,21 +10,12 @@
         }
 
         .target {
-<<<<<<< HEAD
-            background: #f8f8f8;
-=======
             background: #161515;
->>>>>>> 65aab0d482f61ce62a8b90062356f83a8f7c83d3
             height: 300px;
             width: 100%;
             display: flex;
             justify-content: center;
             align-content: center;
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 65aab0d482f61ce62a8b90062356f83a8f7c83d3
         }
 
         .countdown-box {
@@ -46,8 +37,6 @@
 
         }
 
-<<<<<<< HEAD
-=======
         .nice-select .list:hover {
             background-color: #535353;
         }
@@ -63,7 +52,6 @@
             background-color: #3b3a3a;
         }
 
->>>>>>> 65aab0d482f61ce62a8b90062356f83a8f7c83d3
     </style>
     <!-- Page Banner Area start here  -->
     <section class="page-banner-area p-0"
@@ -83,11 +71,7 @@
                         <h1 class="page-banner-title">{{ __('Upload Artwork') }}</h1>
                         <p class="page-banner-para">
                             {{ __('Choose you want your collectible to be one of a kind or if you want
-<<<<<<< HEAD
-                                                                                                                                                                                                                                                                                                                                                to sell one collectible multiple times') }}
-=======
                                                                                                                                                                                                                                                                                                                                                                                                         to sell one collectible multiple times') }}
->>>>>>> 65aab0d482f61ce62a8b90062356f83a8f7c83d3
                         </p>
                     </div>
                 </div>
@@ -116,7 +100,7 @@
     <section class="create-new-page-area section-t-space">
         <div class="container">
 
-            {{ Form::open(['route' => 'service_store','files' => true,'data-handler' => 'showMessage','class' => 'ajax']) }}
+            {{ Form::open(['route' => 'mintable_store','files' => true,'data-handler' => 'showMessage','class' => 'ajax']) }}
             <div class="row">
                 <div class="col-12 col-md-7 col-lg-7">
                     <!-- Create New Box Start -->
@@ -253,7 +237,7 @@
                                 <div class="form-group">
                                     <label for="video_link">{{ __('Mint Address') }} </label>
                                     <input type="text" class="form-control" id="mint_address" name="mint_address"
-                                        placeholder="{{ __('Mint Address') }}" readonly>
+                                        placeholder="{{ __('Mint Address') }}" value="12345" readonly>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6">
