@@ -1183,7 +1183,7 @@
                                                         </div>
                                                         <div class="space-x-5">
                                                             <a class="btn btn-grad" href="javascript:">
-                                                                Mint Now
+                                                                Mint
                                                             </a>
                                                         </div>
                                                     </div>
