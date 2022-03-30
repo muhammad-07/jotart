@@ -84,8 +84,10 @@ Route::group(['prefix'=>'admin','namespace'=>'admin','middleware'=> ['auth','adm
     Route::get('update-service-slider/{id}', 'ServiceController@updateServiceSlider')->name('admin_update_service_slider');
 
     // Mintable
+    Route::get('add-mintable', 'MintableController@addMintable')->name('admin_add_mintable');
+    Route::post('mintable/store', 'MintableController@serviceStore')->name('mintable_store');
     Route::get('mintable-list', 'MintableController@mintList')->name('admin_mintable_list');
-    Route::get('add-mintable', 'MintableController@addMint')->name('admin_add_mintable');
+    
     Route::get('edit-mintable/{id}', 'MintableController@editMint')->name('admin_edit_mintable');
     Route::post('update-mintable/{id}', 'MintableController@updateMint')->name('admin_update_mintable');
     Route::get('approve-mintable/{id}', 'MintableController@approveMint')->name('admin_approve_mintable');
