@@ -62,6 +62,19 @@
     });
 
     $('.putImage1').on('change', function () {
+
+//         var request = new XMLHttpRequest();
+// request.open('GET', MY_URL, true);
+// request.responseType = 'blob';
+// request.onload = function() {
+//     var reader = new FileReader();
+//     reader.readAsDataURL(request.response);
+//     reader.onload =  function(e){
+//         console.log('DataURL:', e.target.result);
+//     };
+// };
+// request.send();
+
         var src = this;
         var target = document.getElementById('target1');
         target.style.maxWidth = '300px';
