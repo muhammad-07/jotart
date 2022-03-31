@@ -31,18 +31,20 @@ else{
 } 
   const fileInput = document.getElementById("customFile");
   
-//   if( fileInput.files.length == 0 ){
-//     alert("Please select an Image or a Video file.");
-// 	return false;
-// }
-//   const data = fileInput.files[0];
-const data = createFile(document.getElementById("customFile_hidden").value);
-console.log(data);
+
 if( document.getElementById("mint_address").value == "" ){
     alert("Please connect metamask wallet to continue.");
 	return false;
 }
+if( fileInput.files.length == 0 ){
+    const data = createFile(document.getElementById("customFile_hidden").value);console.log(data);
   const imageFile = new Moralis.File(data.name, {base64 : data });
+}
+else {
+  const data = fileInput.files[0];
+
+  const imageFile = new Moralis.File(data.name, data);
+}
   //document.getElementById('upload').setAttribute("disabled", null);
   //document.getElementById('file').setAttribute("disabled", null);
   //document.getElementById('name').setAttribute("disabled", null);
@@ -240,17 +242,21 @@ else{
   const fileInput = document.getElementById("customFile");
 
   
-//   if( fileInput.files.length == 0 ){
-//     alert("Please select an Image or a Video file.");
-// 	return false;
-// }
+
 if( document.getElementById("mint_address").value == "" ){
     alert("Please connect metamask wallet to continue.");
 	return false;
 }
-//   const data = fileInput.files[0];
-const data = createFile(document.getElementById("customFile_hidden").value);console.log(data);
+  if( fileInput.files.length == 0 ){
+    const data = createFile(document.getElementById("customFile_hidden").value);console.log(data);
   const imageFile = new Moralis.File(data.name, {base64 : data });
+}
+else {
+  const data = fileInput.files[0];
+
+  const imageFile = new Moralis.File(data.name, data);
+}
+
   //document.getElementById('upload').setAttribute("disabled", null);
   //document.getElementById('file').setAttribute("disabled", null);
   //document.getElementById('name').setAttribute("disabled", null);
