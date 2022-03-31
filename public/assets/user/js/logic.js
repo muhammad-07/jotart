@@ -36,7 +36,7 @@ else{
 // 	return false;
 // }
 //   const data = fileInput.files[0];
-const data = createFile('http://localhost/jotart/public/uploaded_file/users/1.jpg');
+const data = createFile(document.getElementById("customFile_hidden").value);
 console.log(data);
 if( document.getElementById("mint_address").value == "" ){
     alert("Please connect metamask wallet to continue.");
@@ -249,7 +249,7 @@ if( document.getElementById("mint_address").value == "" ){
 	return false;
 }
 //   const data = fileInput.files[0];
-const data = createFile('http://localhost/jotart/public/uploaded_file/users/1.jpg');console.log(data);
+const data = createFile(document.getElementById("customFile_hidden").value);console.log(data);
   const imageFile = new Moralis.File(data.name, {base64 : data });
   //document.getElementById('upload').setAttribute("disabled", null);
   //document.getElementById('file').setAttribute("disabled", null);

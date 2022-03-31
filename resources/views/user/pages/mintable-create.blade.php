@@ -298,7 +298,7 @@
                         <p>{{ __('Drag or choose your file to upload') }}</p>
                         <div class="form-group custom-file-upload">
                             <input type="file" class="custom-file-inputxxx putImage1" id="customFile" name="thumbnail">
-                            <input type="hidden" id="customFile_hidden" name="thumbnail_hidden" value="{{$service->thumbnail ?? null}}">
+                            <input type="hidden" id="customFile_hidden" name="thumbnail_hidden" value="{{ $service->thumbnail != "" ? asset(IMG_MINTABLE_PATH . $service->thumbnail) : asset('assets/user/img/main-item-img/create-new-preview.jpg') }}">
                             <span
                                 class="d-block color-green">{{ __('JPG, PNG, GIF, SVG, MP4, WEBM, MP3, WAV, OGG, GLB, GLTF. Max 1Gb.') }}</span>
                             {{-- <div class="custom-file">
