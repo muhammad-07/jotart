@@ -101,7 +101,7 @@
                                                 <!-- =============== -->
                                                 <div class="card_head space-y-10">
 
-                                                    <a href="Item-details.html">
+                                                    <a href="{{route('mintable_create', encrypt($data->id))  }}">
                                                         <img class="product__img"
                                                             src="{{ asset(IMG_MINTABLE_PATH . $data->thumbnail) }}"
                                                             alt="">
