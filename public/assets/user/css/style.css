@@ -3998,3 +3998,7 @@ input[type=number]::-webkit-outer-spin-button {
 /*--------------------------------------------
     28. User Dashboard Page CSS End
 ---------------------------------------------*/
+.table {
+
+    color: #fff !important;
+  }

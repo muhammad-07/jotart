@@ -25,7 +25,7 @@ Route::group(['prefix'=>'user','namespace'=>'user','middleware'=> ['auth','user'
     Route::get('/product-to-admin/{id}', 'ServiceController@productToAdmin')->name('product_to_admin');
     Route::post('resell-service/{service_id}', 'ServiceController@resellService')->name('resell_service');
 
-    Route::get('mintable/create', 'MintableController@serviceCreate')->name('mintable_create');
+    Route::get('mintable/create/{id?}', 'MintableController@serviceCreate')->name('mintable_create');
     // Route::post('mintable/store', 'MintableController@serviceStore')->name('mintable_store');
     
     // Route::get('service/edit/{id}', 'ServiceController@serviceEdit')->name('service_edit');

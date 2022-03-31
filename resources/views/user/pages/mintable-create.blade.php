@@ -2,7 +2,7 @@
 @section('title', isset($title) ? $title : __('Marketplace'))
 @section('content')
     <style>
-        #target1,
+        /* #target1, */
         #target2,
         #target1_video,
         #target2_video {
@@ -53,6 +53,9 @@
         }
 
     </style>
+
+
+
     <!-- Page Banner Area start here  -->
     <section class="page-banner-area p-0"
         style="background-image: url({{ is_null(allsetting()['dashboard_image']) || allsetting()['dashboard_image'] == ''? asset(IMG_STATIC_PATH . 'page-banner.png'): asset(IMG_PATH . allsetting()['dashboard_image']) }});">
@@ -105,7 +108,7 @@
                 <div class="col-12 col-md-7 col-lg-7">
                     <!-- Create New Box Start -->
                     <div class="create-new-page-box">
-                        <h6 class="create-new-page-box-title font-weight-bold">{{ __('Item Details') }}</h6>
+                        {{-- <h6 class="create-new-page-box-title font-weight-bold">{{ __('Item Details') }}</h6>
                         <div class="form-group">
                             <label for="item-name">{{ __('Service Type') }}</label>
                             <div class="common-radio d-flex align-items-center">
@@ -134,40 +137,32 @@
                                     </label>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="form-group">
                             <label for="">{{ __('Network') }}</label>
-                            <select id="network" type="text" class="form-control" placeholder="telegram username">
+                            <select id="network" name="network" type="text" class="form-control">
                                 <option value="BSC">BSC</option>
                                 <option value="ETH">Etherium</option>
                                 <option value="Polygon">Polygon</option>
                             </select>
                         </div>
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="item-name">{{ __('Supply') }}</label>
                             <input type="text" class="form-control" id="supply" name="title"
                                 placeholder="{{ __('1') }}'">
-                        </div>
-
-
-
+                        </div> --}}
 
                         <div class="form-group">
                             <label for="item-name">{{ __('Item name') }}</label>
-                            <input type="text" class="form-control" id="item-name" name="title"
+                            <input type="text" class="form-control" id="item-name" name="title" value="{{$service->id ?? null}}"
                                 placeholder="{{ __("e. g. 'Redeemable Bitcoin Card with logo") }}'">
                         </div>
 
-
-
-
-
-
                         <div class="form-group">
                             <label for="description">{{ __('DESCRIPTION') }}</label>
-                            <textarea class="form-control" id="description" name="description" rows="3"
+                            <textarea class="form-control" id="description" name="description" rows="3"  value="{{$service->description ?? null}}"
                                 placeholder="{{ __("e. g. 'After purchasing you will able to recived the logo...'") }}"></textarea>
                         </div>
                         <div class="row">
@@ -177,7 +172,7 @@
                                     <select class="form-control" id="category" name="category_id">
                                         <option value="">{{ __('---SELECT A CATEGORY---') }}</option>
                                         @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                            <option value="{{ $category->id }}" {{ $category->id ==  ($service->category_id ?? null) ? 'selected="selected"' : '' }}>{{ $category->title }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -185,11 +180,11 @@
                             <div class="col-12 col-lg-12" id="price-d">
                                 <div class="form-group">
                                     <label for="price">{{ __('Price') }}</label>
-                                    <input type="number" step="0.01" min="0" class="form-control" id="price"
+                                    <input type="number" step="0.01" min="0" class="form-control" id="price" value="{{$service->price_dollar ?? null}}"
                                         name="price_dollar" placeholder="{{ __('Price') }}">
                                 </div>
                             </div>
-                            <input type="hidden" value="1" id="available_item" name="available_item">
+                            {{-- <input type="hidden" value="1" id="available_item" name="available_item">
                             <div class="col-12 col-lg-6 d-none" id="max_bid_d">
                                 <div class="form-group">
                                     <label for="max_bid_amount">{{ __('Max Bid Amount') }}</label>
@@ -232,7 +227,7 @@
                                     <input type="text" class="form-control" id="video_link" name="video_link"
                                         placeholder="{{ __('Video Link') }}">
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-12 col-lg-12">
                                 <div class="form-group">
                                     <label for="video_link">{{ __('Mint Address') }} </label>
@@ -240,7 +235,7 @@
                                         placeholder="{{ __('Mint Address') }}" value="12345" readonly>
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-6">
+                            {{-- <div class="col-12 col-lg-6">
                                 <div class="form-group">
                                     <label for="expired_date">{{ __('Expired Date') }} </label>
                                     <input type="date" class="form-control" id="expired_date" name="expired_date"
@@ -253,12 +248,12 @@
                                     <input type="time" class="form-control" id="expired_time" name="expired_time"
                                         placeholder="{{ __('Expired Time') }}">
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <!-- Create New Box End -->
                     <!-- Create New Box Start -->
-                    <div class="create-new-page-box">
+                    {{-- <div class="create-new-page-box">
                         <div class="create-new-page-box-inner d-flex justify-content-between">
                             <div>
                                 <h6 class="create-new-page-box-title font-weight-bold">{{ __('Unlock once purchased') }}
@@ -273,7 +268,7 @@
                                 </label>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- Create New Box End -->
                     <!-- Create New Box Start -->
                     <div class="ajax-alert">
@@ -303,6 +298,7 @@
                         <p>{{ __('Drag or choose your file to upload') }}</p>
                         <div class="form-group custom-file-upload">
                             <input type="file" class="custom-file-inputxxx putImage1" id="customFile" name="thumbnail">
+                            <input type="hidden" id="customFile_hidden" name="thumbnail_hidden" value="{{$service->thumbnail ?? null}}">
                             <span
                                 class="d-block color-green">{{ __('JPG, PNG, GIF, SVG, MP4, WEBM, MP3, WAV, OGG, GLB, GLTF. Max 1Gb.') }}</span>
                             {{-- <div class="custom-file">
@@ -330,10 +326,10 @@
                             </div>
                         </div>
                         <div class="target">
-                            <img src="{{ asset('assets/user/img/main-item-img/create-new-preview.jpg') }}"
+                            <img src="{{ $service->thumbnail != "" ? asset(IMG_MINTABLE_PATH . $service->thumbnail) : asset('assets/user/img/main-item-img/create-new-preview.jpg') }}"
                                 alt="{{ __('preview') }}" class="img-fluid preview-img" id="target1">
 
-                            <video id="target1_video" width="300" height="300" controls muted></video>
+                            {{-- <video id="target1_video" width="300" height="300" controls muted></video> --}}
                         </div>
 
 

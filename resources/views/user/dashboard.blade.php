@@ -78,6 +78,72 @@
                             </div>
                         </div>
                     </div>
+
+
+
+                    <div class="section__shop mt-10">
+
+                        <div class="container">
+                            <div class="space-y-30">
+                                <h2 class="section__title">JotArt Mintables</h2>
+                                
+                                <div class="row mb-30_reset">
+                                    <?php 
+                                    $items = App\Model\Mintable::where('status', '!=', SOLD)->get();
+                                    // print_r($items);
+                                    foreach ($items as $data) {
+                                       
+                                    ?>
+                                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                        <div class="card__item eight">
+
+                                            <div class="card_body space-y-10">
+                                                <!-- =============== -->
+                                                <div class="card_head space-y-10">
+
+                                                    <a href="Item-details.html">
+                                                        <img class="product__img"
+                                                            src="{{ asset(IMG_MINTABLE_PATH . $data->thumbnail) }}"
+                                                            alt="">
+                                                    </a>
+                                                </div>
+                                                <!-- =============== -->
+                                                <div
+                                                    class="card_footer justify-content-between
+                                                        space-x-20">
+                                                    <div class="space-y-3">
+                                                        <a href="Profile.html">
+                                                            <p class="product__name txt_sm">{{ $data->title }}
+                                                            </p>
+                                                        </a>
+                                                        <div class="space-x-5 d-flex">
+                                                            <i
+                                                                class="ri-star-fill color_brand
+                                                                    txt_xs"></i>
+                                                            <span
+                                                                class="color_brand txt_xs">{{ $data->description }}</span>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="space-x-5">
+                                                        <a class="btn btn-grad" href="{{route('mintable_create', encrypt($data->id))  }}">
+                                                            Mint
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php
+                                    
+                                    }
+                                    ?>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- Profile rightside Area -->
             </div>

@@ -39,7 +39,7 @@ class AuthController extends Controller
                 if (Auth::user()->role == USER_ROLE_ADMIN) {
                     return redirect()->route('admin_dashboard');
                 } elseif (Auth::user()->role == USER_ROLE_USER) {
-                    return redirect()->route('dashboard');
+                    // return redirect()->route('dashboard');
                 } else {
                     Auth::logout();
                     return view('auth.landing', ['title' => __('Home')]);
@@ -59,7 +59,7 @@ class AuthController extends Controller
             $top_sellers_month = TopSeller::whereBetween('activate_date', [$first_day, $last_day])->with('seller')->paginate(8);
             $top_sellers_year = TopSeller::whereBetween('activate_date', [$first_year, $last_year])->with('seller')->paginate(8);
             return view('user.landing', [
-                'title' => __('Home'),
+                'title' => __('User Home'),
                 'categories_services' => $categories_services,
                 'latest_services' => $latest_services,
                 'top_sellers_today' => $top_sellers_today,

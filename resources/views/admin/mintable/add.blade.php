@@ -38,7 +38,7 @@
 
                                         <div class="form-group">
                                             <label for="">{{ __('Network') }}</label>
-                                            <select id="network" type="text" class="form-control"
+                                            <select id="network" name="network" type="text" class="form-control"
                                                 placeholder="telegram username">
                                                 <option value="BSC">BSC</option>
                                                 <option value="ETH">Etherium</option>

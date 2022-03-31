@@ -106,10 +106,13 @@ class MintableController extends Controller
         //
     }
 
-    public function serviceCreate()
+    public function serviceCreate($id)
     {
+        $service_id = decrypt($id);
+        $service = Mintable::whereId($service_id)->first();
+        
         $categories = Category::orderBy('title', 'ASC')->get();
-        return view('user.pages.mintable-create', ['title' => __('Mintable Artwork'), 'categories' => $categories]);
+        return view('user.pages.mintable-create', ['title' => __('Mintable Artwork'), 'categories' => $categories, 'service' => $service]);
     }
 
     public function serviceStore(ServiceCreateRequest $request)
