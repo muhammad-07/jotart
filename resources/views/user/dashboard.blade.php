@@ -94,13 +94,17 @@
                                     foreach ($items as $data) {
                                        
                                     ?>
-                                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
                                         <div class="card__item eight">
 
                                             <div class="card_body space-y-10">
                                                 <!-- =============== -->
                                                 <div class="card_head space-y-10">
-
+                                                    <div class="price__content space-x-5">
+                                                        <img class="eth__img d-inline" style="max-width: 25px" src="assets/img/icons/ETH.svg" alt="eth">
+                                                        <p class="price txt_sm _bold d-inline">{{$data->price_dollar}}
+                                                            ETH</p>
+                                                    </div>
                                                     <a href="{{route('mintable_create', encrypt($data->id))  }}">
                                                         <img class="product__img"
                                                             src="{{ asset(IMG_MINTABLE_PATH . $data->thumbnail) }}"
