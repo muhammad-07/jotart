@@ -17,6 +17,7 @@ class Mintable extends Model
         'title',
         'description',
         'type',
+        'network',
         'expired_at',
         'price_dollar',
         'fees_percentage',

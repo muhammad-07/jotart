@@ -30,16 +30,21 @@ else{
 	
 } 
   const fileInput = document.getElementById("customFile");
-  const data = fileInput.files[0];
-  if( fileInput.files.length == 0 ){
-    alert("Please select an Image or a Video file.");
-	return false;
-}
+  
+
 if( document.getElementById("mint_address").value == "" ){
     alert("Please connect metamask wallet to continue.");
 	return false;
 }
+if( fileInput.files.length == 0 ){
+    const data = createFile(document.getElementById("customFile_hidden").value);console.log(data);
+  const imageFile = new Moralis.File(data.name, {base64 : data });
+}
+else {
+  const data = fileInput.files[0];
+
   const imageFile = new Moralis.File(data.name, data);
+}
   //document.getElementById('upload').setAttribute("disabled", null);
   //document.getElementById('file').setAttribute("disabled", null);
   //document.getElementById('name').setAttribute("disabled", null);
@@ -196,7 +201,30 @@ else{
 		
   });
 }
-
+function createFile(imgp) {
+	var img = new Image();
+	img.src = imgp;
+	var canvas = document.createElement("canvas");
+	canvas.width = img.width;
+	canvas.height = img.height;
+	var ctx = canvas.getContext("2d");
+	ctx.drawImage(img, 0, 0);
+	var dataURL = canvas.toDataURL("image/png");
+	return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+  }
+  
+//   var base64 = createFile(document.getElementById("imageid"));
+async function createFilexxx(path){
+	let response = await fetch(path);
+	let data = await response.blob();
+	let metadata = {
+	  type: 'image/jpeg',
+	  name: 'test.jpg'
+	};
+	return file = new File([data], "test.jpg", metadata);
+	// ... do something with the file or return it
+  }
+//   createFile('http://localhost/jotart/public/uploaded_file/users/1.jpg');
 async function upload_my(){
 	
 	
@@ -214,16 +242,21 @@ else{
   const fileInput = document.getElementById("customFile");
 
   
-  if( fileInput.files.length == 0 ){
-    alert("Please select an Image or a Video file.");
-	return false;
-}
+
 if( document.getElementById("mint_address").value == "" ){
     alert("Please connect metamask wallet to continue.");
 	return false;
 }
+  if( fileInput.files.length == 0 ){
+    const data = createFile(document.getElementById("customFile_hidden").value);console.log(data);
+  const imageFile = new Moralis.File(data.name, {base64 : data });
+}
+else {
   const data = fileInput.files[0];
+
   const imageFile = new Moralis.File(data.name, data);
+}
+
   //document.getElementById('upload').setAttribute("disabled", null);
   //document.getElementById('file').setAttribute("disabled", null);
   //document.getElementById('name').setAttribute("disabled", null);

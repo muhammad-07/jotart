@@ -138,13 +138,17 @@
                                 </div>
                             </div>
                         </div> --}}
-
+@php
+    $network = $service->network ?? null;
+    
+@endphp
                         <div class="form-group">
                             <label for="">{{ __('Network') }}</label>
                             <select id="network" name="network" type="text" class="form-control">
-                                <option value="BSC">BSC</option>
-                                <option value="ETH">Etherium</option>
-                                <option value="Polygon">Polygon</option>
+                                <option value="BSC" @php echo $network == "BSC" ? "selected='selected'" : "" @endphp>BSC</option>
+                                <option value="ETH" @php echo $network == "ETH" ? "selected='selected'" : "" @endphp>Etherium</option>
+                                <option value="Polygon" @php echo $network == "Polygon" ? "selected='selected'" : "" @endphp>Polygon</option>
+                               
                             </select>
                         </div>
 
@@ -156,7 +160,7 @@
 
                         <div class="form-group">
                             <label for="item-name">{{ __('Item name') }}</label>
-                            <input type="text" class="form-control" id="item-name" name="title" value="{{$service->id ?? null}}"
+                            <input type="text" class="form-control" id="item-name" name="title" value="{{$service->title ?? null}}"
                                 placeholder="{{ __("e. g. 'Redeemable Bitcoin Card with logo") }}'">
                         </div>
 

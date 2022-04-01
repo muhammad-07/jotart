@@ -129,6 +129,7 @@ class MintableController extends Controller
                 'title' => $request->title,
                 'description' => $request->description,
                 'type' => $request->type,
+                'network' => $request->network,
                 'expired_at' => $expired_at,
                 'price_dollar' => $request->price_dollar,
                 'fees_percentage' => 2,
