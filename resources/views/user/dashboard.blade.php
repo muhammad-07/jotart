@@ -101,9 +101,9 @@
                                                 <!-- =============== -->
                                                 <div class="card_head space-y-10">
                                                     <div class="price__content space-x-5">
-                                                        <img class="eth__img d-inline" style="max-width: 25px" src="assets/img/icons/ETH.svg" alt="eth">
+                                                        {{-- <img class="eth__img d-inline" style="max-width: 25px" src="assets/img/icons/ETH.svg" alt="eth"> --}}
                                                         <p class="price txt_sm _bold d-inline">{{$data->price_dollar}}
-                                                            ETH</p>
+                                                            {{$data->network}}</p>
                                                     </div>
                                                     <a href="{{route('mintable_create', encrypt($data->id))  }}">
                                                         <img class="product__img"

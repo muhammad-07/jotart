@@ -144,7 +144,7 @@
 @endphp
                         <div class="form-group">
                             <label for="">{{ __('Network') }}</label>
-                            <select id="network" name="network" type="text" class="form-control">
+                            <select id="network" name="network" class="form-control">
                                 <option value="BSC" @php echo $network == "BSC" ? "selected='selected'" : "" @endphp>BSC</option>
                                 <option value="ETH" @php echo $network == "ETH" ? "selected='selected'" : "" @endphp>Etherium</option>
                                 <option value="Polygon" @php echo $network == "Polygon" ? "selected='selected'" : "" @endphp>Polygon</option>
