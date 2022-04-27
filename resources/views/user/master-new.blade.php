@@ -317,7 +317,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="section__games mt-80">
+                        {{-- <div class="section__games mt-80">
                             <div class="container">
                                 <div class="space-y-30">
                                     <div class="section_head">
@@ -371,8 +371,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="section__deals mt-80">
+                        </div> --}}
+                        {{-- <div class="section__deals mt-80">
 
                             <div class="container">
                                 <div class="space-y-30">
@@ -680,8 +680,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="section__deals mt-80">
+                        </div> --}}
+                        {{-- <div class="section__deals mt-80">
 
                             <div class="container">
                                 <div class="space-y-30">
@@ -941,7 +941,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="section__buy__sell mt-80">
                             <div class="container">
                                 <div class="row justify-content-center sm:space-y-30">
